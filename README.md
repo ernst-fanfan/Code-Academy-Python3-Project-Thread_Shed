@@ -29,8 +29,9 @@ Append the customers name to customers.
 Append the amount of the sale to sales.
 Append the threads sold to thread_sold.
 
-12. Print customers, sales, and thread_sold to make sure each list is what you are expected. Determine the total value of the days sales.
+12. Print customers, sales, and thread_sold to make sure each list is what you are expected. 
 
+Determine the total value of the days sales.
 13. Now we want to know how much Thread Shed made in a day. First, define a variable called total_sales and set it equal to 0.
 
 14. Now, consider the list sales. It is a list of strings that we want to sum. In order for us to sum these values, we will have to remove the $, and set them equal to floats. Iterate through sales and for each item, strip off the $, set it equal to a float, and add it to total_sales
