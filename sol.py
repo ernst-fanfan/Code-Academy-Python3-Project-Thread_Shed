@@ -107,6 +107,7 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 
 #------------------------------------------------
 # Start coding below!
+#cleaning up string
 daily_transactions = daily_sales.replace(';,;', ':').split(',')
 daily_transactions_split, transactions_clean, =[], []
 for transaction in daily_transactions:
@@ -117,17 +118,20 @@ for transaction in daily_transactions_split:
     temp_lst.append(data_point.strip().strip('\n'))
   transactions_clean.append(temp_lst)
 
+#Organize data points into seperate lists
 customers, sales, thread_sold = [], [], []
 for data_point in transactions_clean:
   customers.append(data_point[0])
   sales.append(data_point[1])
   thread_sold.append(data_point[2])
 
+#Calc tot sales
 total_sales = 0
 for sale in sales:
   total_sales += float(sale.strip('$'))
 print('Today\'s total sales: ${:.2f}'.format(total_sales))
 
+#Cleaning color list
 thread_sold_split = []
 for color in thread_sold:
   if ('&' in color):
@@ -139,9 +143,11 @@ for color in thread_sold:
   else:
     thread_sold_split.append(color)
 
+#color count
 def color_count (color):
   return thread_sold_split.count(color)
 
+#extrating relavent data
 colors = ['red','yellow','green','white','black','blue','purple']
 print('Sales per color:')
 for color in colors:
